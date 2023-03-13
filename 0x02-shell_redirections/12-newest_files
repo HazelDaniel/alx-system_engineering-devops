@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -tvr | grep "" | head -n 10
