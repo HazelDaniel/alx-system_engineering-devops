@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #this ia a script that list non-hidden files in a directory in a specified format
 REGEX_PATTERN="^\.\/\w+-(.*)"
-for file in "."/*;
+for file in *;
 do
 	if [[ "$file" =~ $REGEX_PATTERN ]];
 	then
