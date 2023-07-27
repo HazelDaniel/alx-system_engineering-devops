@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#this ia a script that prints 'Best School' and 'hi' at a certain point in the iteration
+count=0
+while [[ "$count" -lt 10 ]];
+do
+	echo "Best School"
+	if [[ "$count" -eq 8 ]];
+	then
+		echo "Hi"
+	fi
+	((count++))
+done
