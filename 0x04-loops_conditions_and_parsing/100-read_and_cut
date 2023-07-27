@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#a script that reads the contents of /etc/passwd and prints them out formatted by fields
+
+while read -r fileline;
+do
+	usr_name=$(echo "$fileline" | cut -d ":" -f 1)
+	usr_id=$(echo "$fileline" | cut -d ":" -f 3)
+	usr_home_dir=$(echo "$fileline" | cut -d ":" -f 6)
+	echo "$usr_name:$usr_id:$usr_home_dir"
+done < /etc/passwd
