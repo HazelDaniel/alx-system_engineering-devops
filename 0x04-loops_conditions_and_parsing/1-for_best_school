@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#this is a script that prints out 'Best School' 10 times
 
 for _ in {0..9};
 do
