@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#this ia a script that prints 'Best School' 10 times using a while loop
+count=0
+while [[ "$count" -lt 10 ]];
+do
+	echo "hello"
+	((count++))
+done
