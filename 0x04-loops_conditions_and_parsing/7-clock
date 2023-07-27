@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#this ia a script that prints some values at some iterations in a loop
+outer_count=0
+while [[ "$outer_count" -lt 13 ]];
+do
+	count=0
+	echo "Hour: $outer_count"
+	while [[ "$count" -lt 59 ]];
+	do
+		echo "$((count + 1))"
+		((count++))
+	done
+	((outer_count++))
+done
