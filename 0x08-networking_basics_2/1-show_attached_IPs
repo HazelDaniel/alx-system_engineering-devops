@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Display all active IPv4 IPs on the host
+
+ifconfig | grep -Po "inet [[:digit:]\.]+" | grep -Po "(?<=inet ).*"
