@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Connects to host ip address: 35.172.230.83 using
+# The key in the ~/.ssh/school configuration file
+
+ssh -i ~/.ssh/school ubuntu@35.172.230.83
