@@ -1,6 +1,6 @@
 #this executes a command to stop a process in puppet
 
-exec { "kill killmenow":
+exec { "pkill":
 	command => "pkill -9 ./killmenow",
 	path => ['/usr/bin', '/usr/sbin', '/bin']
 }
