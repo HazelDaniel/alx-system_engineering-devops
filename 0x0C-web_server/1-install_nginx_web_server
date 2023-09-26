@@ -1,3 +1,4 @@
 #/usr/bin/env bash
+# a script that installs nginx on my web server
 
 sudo apt install nginx -y
