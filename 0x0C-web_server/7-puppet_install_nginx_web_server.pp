@@ -1,3 +1,4 @@
+# this puppet script does the automation of all these tasks
 
 exec { 'add nginx stable repo':
   command => 'sudo add-apt-repository ppa:nginx/stable',
@@ -47,7 +48,8 @@ file { '/var/www/html/404.html':
 file { 'Nginx default config file':
   ensure  => file,
   path    => '/etc/nginx/sites-enabled/default',
-  content =>"server {
+  content =>
+"server {
         listen 80 default_server;
         listen [::]:80 default_server;
                root /var/www/html;
