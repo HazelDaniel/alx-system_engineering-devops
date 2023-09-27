@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#this script runs apache on the container provided in the project
+
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
