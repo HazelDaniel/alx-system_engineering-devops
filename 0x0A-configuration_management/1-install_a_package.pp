@@ -1,7 +1,7 @@
 # this puppet manifest installs flask 2.1.0 from pip3
 
 file {'/usr/bin/pip3':
-  ensure => file,
+  ensure => present,
 }
 
 exec {'flask-install':
