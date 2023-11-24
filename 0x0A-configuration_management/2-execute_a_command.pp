@@ -5,6 +5,6 @@ file { '/usr/bin/pkill':
 }
 
 exec { 'kill killmenow':
-  command => '/usr/bin/pkill killmenow',
+  command => '/usr/bin/pkill -f killmenow',
   require => File['/usr/bin/pkill']
 }
