@@ -1,6 +1,6 @@
 # this is a puppet manifest responsible for creating a file called "school" in the /tmp directory
 
-file { 'school':
+file { '/tmp/school':
   ensure  => file,
   group   => 'www-data',
   owner   => 'www-data',
