@@ -1,0 +1,4 @@
+#config file for the ssh connections on my server
+Host *
+PasswordAuthentication no
+IdentifyFile ~/.ssh/school
