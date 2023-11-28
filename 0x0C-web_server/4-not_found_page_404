@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#This script Installs nginx on my remote server and handles 404 redirections
+sudo su root -
+apt-get -y update
+apt-get -y install nginx
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html 1> /dev/null
+sudo sed -i '/listen 80 default_server/a        rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default ;\
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/my_404.html > /dev/null
+sudo sed -i '/rewrite \^\/redirect_me https:\/\/www.youtube.com\/ permanen'\
+'t;/a\        error_page 404 my_404.html;' /etc/nginx/sites-available/default
+service nginx restart
