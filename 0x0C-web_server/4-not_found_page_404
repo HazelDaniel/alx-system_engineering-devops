@@ -6,6 +6,6 @@ apt-get -y update
 apt-get -y install nginx
 sudo echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html 1> /dev/null
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/my_404.html > /dev/null
-x=$(date) ; x=${x// /_} touch $x; awk -i $x '/listen 80 default_server;/{print; print "        rewrite ^/redirect_me https://www.youtube.com/ permanent;" next;}1' /etc/nginx/sites-available/default | tee $x && cat $x > /etc/nginx/sites-available/default ; rm $x
-x=$(date); x=${x// /_} ; touch $x; awk -i $x '/listen 80 default_server;/{print; print "        error_page 404 /my_404.html;" next;}1' /etc/nginx/sites-available/default | tee "$x" && cat "$x" > /etc/nginx/sites-available/default ; rm "$x"
+x=$(date) ; x=${x// /_} ; touch $x; awk -i ./$x '/listen 80 default_server;/{print; getline; if ($0 !~ /^\s*rewrite \^\/redirect_me.*;$/) print "        rewrite ^/redirect_me https://www.youtube.com/ permanent;"; print; next}1' /etc/nginx/sites-available/default | tee $x && cat $x > /etc/nginx/sites-available/default ; rm $x
+x=$(date); x=${x// /_} ; touch $x; awk -i ./$x '/listen 80 default_server;/{print; getline; if ($0 !~ /^\s*error_page 404 .*;$/) print "        error_page 404 /my_404.html;"; print; next;}1' /etc/nginx/sites-available/default | tee "$x" && cat "$x" > /etc/nginx/sites-available/default ; rm "$x"
 service nginx restart
