@@ -2,6 +2,7 @@
 # this script Configures Nginx so that its HTTP response contains
 # a custom header
 
+sudo su root -
 haproxy_config="\
 frontend haproxy_balancer
     bind *:80
