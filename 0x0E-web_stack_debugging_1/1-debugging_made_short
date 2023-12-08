@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script kills the running instance of an nginx process
+
+sudo pkill nginx
