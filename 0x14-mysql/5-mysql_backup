@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script backs up and compresses database snapshots
+mysqldump --all-databases -uroot -p"$1" > backup.sql
+file_name=$(x=$(date +"%D"); x=$(echo $x | tr "/" " " | awk '{print $2"-"$1"-"$3;}'); echo $x.tar.gz)
+echo $file_name
+tar -czvf "$file_name" backup.sql
