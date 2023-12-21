@@ -3,6 +3,6 @@
 
 sudo adduser --no-create-home --disabled-login --disabled-password --group nginx
 tmpfile=$(date +"%Y%m%d%H%M%S"); awk -v filename="$tmpfile" '{sub(/user www-data www\
--data;/, "user nginx nginx;"); sub(/user www-data;/, "user nginx;")} 1' "$filename" test\
+-data;/, "user nginx nginx;"); sub(/user www-data;/, "user nginx;")} 1' test\
  > "$tmpfile" && mv "$tmpfile" /etc/nginx/nginx.conf
 sudo service nginx restart
