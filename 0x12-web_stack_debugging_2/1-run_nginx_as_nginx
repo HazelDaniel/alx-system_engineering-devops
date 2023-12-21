@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # this script runs the nginx service as the nginx user
 
-sudo adduser --no-create-home --disabled-login --disabled-password --group nginx
+sudo adduser --system --no-create-home --disabled-login --disabled-password --group nginx
 tmpfile=$(date +"%Y%m%d%H%M%S"); awk -v filename="$tmpfile" '{sub(/user www-data www\
--data;/, "user nginx nginx;"); sub(/user www-data;/, "user nginx;")} 1' test\
- > "$tmpfile" && mv "$tmpfile" /etc/nginx/nginx.conf
+-data;/, "user nginx nginx;"); sub(/user www-data;/, "user nginx;")} 1' /etc/nginx/nginx.conf\
+ > "$tmpfile" && sudo mv "$tmpfile" /etc/nginx/nginx.conf
 sudo service nginx restart
