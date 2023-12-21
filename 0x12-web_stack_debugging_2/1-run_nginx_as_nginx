@@ -3,12 +3,12 @@
 
 sudo adduser --system --no-create-home --disabled-login --disabled-password --group nginx
 sudo -u nginx service nginx stop
-sudo chmod 644 /etc/nginx/nginx.conf
 sudo pkill apache2
+sudo chmod 644 /etc/nginx/nginx.conf
 tmpfile=$(date +"%Y%m%d%H%M%S"); awk -v filename="$tmpfile" '{sub(/user www-data www\
 -data;/, "user nginx nginx;"); sub(/user www-data;/, "user nginx;")} 1' /etc/nginx/nginx.conf\
  > "$tmpfile" && sudo mv "$tmpfile" /etc/nginx/nginx.conf
 tmpfile=$(date +"%Y%m%d%H%M%S"); awk -v filename="$tmpfile" '{sub(/8080/\
 , "80");} 1' /etc/nginx/sites-available/default\
- > "$tmpfile" && sudo mv "$tmpfile" /etc/nginx/nginx.conf
-sudo -u nginx service nginx restart
+ > "$tmpfile" && sudo mv "$tmpfile" /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
