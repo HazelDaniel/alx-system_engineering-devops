@@ -4,7 +4,6 @@
 
 if __name__ == "__main__":
     import requests
-    import sys
     import json
 
     users_dict = {}
@@ -57,7 +56,7 @@ if __name__ == "__main__":
 
     try:
         with open("todo_all_employees.json", "w") as file:
-            users_dict = json.dumps(users_dict)
-            file.write(users_dict)
+            res_dict = json.dumps(users_dict)
+            file.write(res_dict)
     except Exception as e:
         print(e)
