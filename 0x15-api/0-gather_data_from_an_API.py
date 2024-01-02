@@ -34,7 +34,7 @@ def fetch_and_catch(url, func):
 def set_user_name(data):
     """a sub-routine that sets the user data"""
     global user_name
-    user_name = data['name']
+    user_name = data.get("name", "")
 
 
 def set_todos(data):
@@ -42,7 +42,7 @@ def set_todos(data):
     global user_todos
     global user_todos_completed
     user_todos = data
-    user_todos_completed = [x for x in data if x['completed']]
+    user_todos_completed = [x for x in data if x.get('completed', False)]
 
 
 fetch_and_catch(f"users/{employee_id}/todos", set_todos)
@@ -53,4 +53,4 @@ all_tasks = len(user_todos)
 print(f"Employee {user_name} is done with"
       f"tasks({tasks_complete}/{all_tasks}):")
 for v in user_todos_completed:
-    print(f"\t {v['title']}")
+    print(f"\t {v.get('title', '')}")
