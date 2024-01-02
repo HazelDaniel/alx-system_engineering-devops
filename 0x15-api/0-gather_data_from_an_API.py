@@ -2,6 +2,8 @@
 """this module uses the requests module to get the number of
     todos of an employee based on ID provided"""
 
+if not __name__ == "__main__":
+    exit(98)
 import requests
 import sys
 
