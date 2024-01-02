@@ -53,7 +53,7 @@ if __name__ == "__main__":
         records = []
         with open(f"{employee_id}.json", "w") as file:
             records = {f"{employee_id}": [{"task": f"{x.get('title', '')}",
-                       "completed": f"{x.get('completed', 'False')}",
+                       "completed": x.get('completed', False),
                                            "username":
                                            f"{user_name}"}
                                           for x in user_todos]}
