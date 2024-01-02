@@ -34,7 +34,7 @@ if __name__ == "__main__":
     def set_user_name(data):
         """a sub-routine that sets the user data"""
         global user_name
-        user_name = data.get("name", "")
+        user_name = data.get("username", "")
 
     def set_todos(data):
         """a sub-routine that sets the todos of a user"""
