@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     tasks_complete = len(user_todos_completed)
     all_tasks = len(user_todos)
-    print(f"Employee {user_name} is done with"
+    print(f"Employee {user_name} is done with "
           f"tasks({tasks_complete}/{all_tasks}):")
     for v in user_todos_completed:
         print(f"\t {v.get('title', '')}")
