@@ -5,7 +5,7 @@ import requests
 import sys
 
 
-def get_subreddit_subs(subreddit):
+def number_of_subscribers(subreddit):
     """this gets the subscribers of a given subreddit"""
     headers = {"User-Agent": "0_subs/1.0"}
 
@@ -23,5 +23,5 @@ def get_subreddit_subs(subreddit):
 if __name__ == "__main__":
     if (len(sys.argv) < 2):
         exit(98)
-    sub_count = get_subreddit_subs(sys.argv[1])
+    sub_count = number_of_subscribers(sys.argv[1])
     print(sub_count)
