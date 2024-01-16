@@ -5,7 +5,7 @@ from collections import Counter
 
 
 def count_words(subreddit, word_list, after=None, word_counts=None):
-    headers = {"User-Agent": "MyApp/1.0"}
+    headers = {"User-Agent": "100_count/1.0"}
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
