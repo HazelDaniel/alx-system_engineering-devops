@@ -33,12 +33,6 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend haproxy_balancer_insecure
-	bind *:8080
-	mode http
-	option forwardfor
-	redirect scheme https code 301 if !{ ssl_fc }
-
 frontend haproxy_balancer
 	bind *:443 ssl crt /etc/letsencrypt/live/www.alxserver.hazeldaniel.tech/www.alxserver.hazeldaniel.tech.pem
 	option forwardfor
