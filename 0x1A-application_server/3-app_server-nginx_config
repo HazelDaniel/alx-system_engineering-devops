@@ -18,6 +18,12 @@ server {
                 proxy_pass http://localhost:5000;
         }
 
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)/?$ {
+								rewrite ^/airbnb-dynamic(.*)$ $1 break;
+                include proxy_params;
+                proxy_pass http://localhost:5001;
+        }
+
         location /hbnb_static {
                 alias /data/web_static/current;
                 index index.html index.htm;
