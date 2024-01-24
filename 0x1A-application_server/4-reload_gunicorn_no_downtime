@@ -1,0 +1,1 @@
+pgrep -HUP -f gunicorn
