@@ -1,4 +1,3 @@
-[Unit]
 Description=A gunicorn service for web flask
 After=network.target
 
@@ -8,7 +7,7 @@ Type=simple
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
 User=ubuntu
 Group=ubuntu
-ExecStart=/home/ubuntu/AirBnB_clone_v2/flaskEnv/bin/gunicorn -c /home/ubuntu/AirBnB_clone_v4/gunicorn.conf.py web_dynamic.2-hbnb:app >> /tmp/airbnb-access.log 2> /tmp/airbnb-error.log
+ExecStart=/home/ubuntu/.local/bin/gunicorn -c /home/ubuntu/AirBnB_clone_v4/gunicorn.conf.py web_dynamic.2-hbnb:app >> /tmp/airbnb-access.log 2> /tmp/airbnb-error.log
 ExecStop=/usr/bin/pkill -f gunicorn
 
 [Install]
